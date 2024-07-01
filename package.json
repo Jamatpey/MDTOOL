@@ -1,0 +1,36 @@
+{
+  "name": "mdtrackertool",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "package": "electron-packager . MiApp --platform=win32 --arch=x64 --out=dist",
+    "build": "electron-builder"
+  },
+  "devDependencies": {
+    "electron": "^31.0.2",
+    "electron-builder": "^24.13.3",
+    "electron-packager": "^17.1.2"
+  },
+  "dependencies": {
+    "exceljs": "^4.4.0",
+    "xlsx": "^0.18.5"
+  },
+  "build": {
+    "appId": "com.miapp.electron",
+    "win": {
+      "target": "nsis"
+    },
+    "files": [
+      "build/**/*",
+      "main.js",
+      "index.html",
+      "preload.js",
+      "package.json",
+      "renderer.js"
+    ],
+    "directories": {
+      "buildResources": "build"
+    }
+  }
+}
